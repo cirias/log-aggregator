@@ -6,14 +6,14 @@ Aggregate various project running on different server to one log center.
 ### Tips
 
 ```bash
-# Check Validation of the config file.
+$ # Check Validation of the config file.
 $ rsyslogd -f <config file> -N1
 ```
 
 ### TODO
 
 * analysis situation quantity
-* config heart beat check
+* config heartbeat check
 * config max error alarm
 * make init.d file
 
@@ -22,11 +22,18 @@ $ rsyslogd -f <config file> -N1
 It's little different between slave and master server.
 These are some step which should be down all the time.
 
-Update `rsyslog` to 7.*
+```bash
+$ # Update `rsyslog` to 7.*
+$ sudo add-apt-repository ppa:adiscon/v7-stable
+$ sudo apt-get update
+$ sudo apt-get install rsyslog
+```
 
 ```bash
 $ git clone git@github.com:Tradesparq/log-aggregator.git && cd log-aggregator
 ```
+
+Add option `--merge-logs` to pm2 command.
 
 #### Slave
 
